@@ -1,7 +1,7 @@
 SUMMARY = "Adds usb-uvc capabilities, h264 encoding"
 IMAGE_INSTALL = "packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}"
 IMAGE_LINGUAS = " "
-LICENSE = "MIT"
+LICENSE = "CLOSED"
 
 
 python do_display_banner() {
@@ -16,6 +16,12 @@ addtask display_banner before do_build
 
 inherit core-image
 
+IMAGE_INSTALL:append = "\
+    gstreamer1.0 \
+    opencv \
+    sample-video \
+"
+
 # Set rootfs to 1 GB by default
 IMAGE_OVERHEAD_FACTOR ?= "1.0"
 IMAGE_ROOTFS_SIZE ?= "1003520"
@@ -26,17 +32,3 @@ inherit extrausers
 EXTRA_USERS_PARAMS = " \
     usermod -p '\$6\$11223344\$N9q7Gt5eJJb54sBuR/.7ih8w/OeBBQ8D38FmefDKuTMVM5RbnR07FQayQQWSntbXw/DPpuS781UWLHDTY1lhr1' root; \
 "
-
-# inherit allarch
-
-# MY_FILES = "/home/antoine/code/sama5d27/meta-video/usr/share/movies/qb_helmet_sample.mp4"
-
-# FILES:${PN} += "${datadir}/movies"
-# FILES:${PN} += "${datadir}/movies/qb_helmet_sample.mp4"
-
-# do_install(){
-#     install -d ${D}${datadir}/movies
-#     install -m 0644 ${MY_FILES} ${D}${datadir}/movies
-# }
-
-
