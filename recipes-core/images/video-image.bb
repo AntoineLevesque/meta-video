@@ -20,6 +20,8 @@ IMAGE_INSTALL:append = "\
     gstreamer1.0 \
     opencv \
     sample-video \
+    v4l-utils \
+    usbutils \
 "
 
 # Set rootfs to 1 GB by default
