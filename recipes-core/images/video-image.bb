@@ -22,6 +22,10 @@ IMAGE_INSTALL:append = "\
     sample-video \
     v4l-utils \
     usbutils \
+    i2c-tools \
+    kernel-modules \
+    cronie \
+    usb-uvc-config \
 "
 
 # Set rootfs to 1 GB by default

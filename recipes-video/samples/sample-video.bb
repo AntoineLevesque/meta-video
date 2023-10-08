@@ -9,6 +9,6 @@ FILES:${PN} += "${datadir}/movies/qb_helmet_sample.mp4"
 
 do_install(){
     install -d ${D}${datadir}/movies
-    install -m 0644 ${VIDEO_FILE} ${D}${datadir}/movies
+    install -m 0755 ${VIDEO_FILE} ${D}${datadir}/movies
 }
 
