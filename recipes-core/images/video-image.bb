@@ -24,7 +24,6 @@ IMAGE_INSTALL:append = "\
     usbutils \
     i2c-tools \
     kernel-modules \
-    cronie \
     usb-uvc-config \
 "
 

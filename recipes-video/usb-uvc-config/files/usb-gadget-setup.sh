@@ -20,10 +20,17 @@
   echo "UVC" > configs/c.1/strings/0x409/configuration
 
   # Camera related configurations
-  mkdir -p functions/uvc.usb0/streaming/uncompressed/u/360p
-  echo "666666" >> functions/uvc.usb0/streaming/uncompressed/u/360p/dwFrameInterval
-  echo "1000000" >> functions/uvc.usb0/streaming/uncompressed/u/360p/dwFrameInterval
-  echo "5000000" >> functions/uvc.usb0/streaming/uncompressed/u/360p/dwFrameInterval
+  mkdir -p functions/uvc.usb0/streaming/uncompressed/u/720p
+
+  #fps = 1/(dwFrameInterval * 1E^-7)
+  # 30 fps
+  echo "333333" >> functions/uvc.usb0/streaming/uncompressed/u/720p/dwFrameInterval
+  # 15 fps
+  echo "666666" >> functions/uvc.usb0/streaming/uncompressed/u/720p/dwFrameInterval
+  # 10 fps
+  echo "1000000" >> functions/uvc.usb0/streaming/uncompressed/u/720p/dwFrameInterval
+  # 2fps
+  echo "5000000" >> functions/uvc.usb0/streaming/uncompressed/u/720p/dwFrameInterval
 
   # Create header
   mkdir functions/uvc.usb0/streaming/header/h
